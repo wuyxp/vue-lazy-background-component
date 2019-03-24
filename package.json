@@ -1,0 +1,35 @@
+{
+  "name": "vue-lazy-background-component",
+  "version": "1.0.0",
+  "description": "提供一个可以对背景图片延迟加载，并且动态选择加载更合适（webp）格式的图片。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuyxp/vue-lazy-background-component.git"
+  },
+  "keywords": [],
+  "author": "956826374@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wuyxp/vue-lazy-background-component/issues"
+  },
+  "homepage": "https://github.com/wuyxp/vue-lazy-background-component#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-loader": "^2.1.2",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.4000",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
