@@ -11,8 +11,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         use: {
           loader: 'vue-loader',
@@ -20,8 +19,47 @@ module.exports = {
 
           }
         }
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]_[hash:base64:8]'
+            }
+          },
+          'less-loader'
+        ]
+      },
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              appendTsSuffixTo: [/\.vue$/]
+            }
+          }
+        ]
+      }, {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.vue', '.js']
   },
   devServer: {
     open: true,
