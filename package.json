@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "fix": "tslint --fix --project ./tsconfig.json"
   },
   "repository": {
     "type": "git",
