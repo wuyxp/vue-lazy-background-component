@@ -1,10 +1,9 @@
 .container {
   position: relative;
-  background-color: #aaaaaa;
+  background-color: #cccccc;
 }
 .containerSlot {
   position: relative;
-  z-index: 2;
 }
 .containerMask {
   width: 100%;
@@ -13,11 +12,5 @@
   background-size: inherit;
   top: 0;
   left: 0;
-  z-index: 1;
-}
-.fadeEnterActive, .fadeLeaveActive {
-  transition: opacity .5s;
-}
-.fadeEnter, .fadeLeaveTo /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+  z-index: 0;
 }

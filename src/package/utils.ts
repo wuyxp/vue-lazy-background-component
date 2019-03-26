@@ -18,7 +18,6 @@ export const replaceMiniSrc: (src: string) => string = src => src.replace(/\.(\w
  */
 export const replaceWebpSrc: (src: string) => string = src => src.replace(/(?:\.\w+)(\?|$)/, '.webp$1')
 
-let originPicSrc: string = ''
 /**
  * 加载一张图片并且对对应的成功或者失败进行回调
  * @param src 传入需要加载的图片路径
@@ -36,37 +35,4 @@ export const loadImg = (src: string, callback: (image: HTMLImageElement) => void
     }
   }
   image.src = src
-}
-
-export const loadOriginPic = (originSrc?: string): void => {
-  const src = originSrc ? originSrc : originPicSrc
-  loadImg(src, image => {
-    const style = {
-      backgroundImage: `url(${image.src})`
-    }
-  })
-}
-
-export const loadWebpPic = (src: string): void => {
-  loadImg(src, image => {
-    const style = {
-      backgroundImage: `url(${image.src})`
-    }
-  }, loadOriginPic)
-}
-
-export const loadMiniPic = (src: string): void => {
-  originPicSrc = src
-  const miniSrc = replaceMiniSrc(src)
-  const webpSrc = replaceWebpSrc(src)
-  loadImg(miniSrc, image => {
-    const style = {
-      backgroundImage: `url(${image.src})`
-    }
-    if (isSupportWebp()) {
-      loadWebpPic(webpSrc)
-    } else {
-      loadOriginPic()
-    }
-  }, loadOriginPic)
 }
