@@ -12,12 +12,15 @@
     "type": "git",
     "url": "git+https://github.com/wuyxp/vue-lazy-background-component.git"
   },
-  "keywords": [],
+  "keywords": ["Vue", "Component", "Lazy", "background-image", "background"],
   "author": "956826374@qq.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wuyxp/vue-lazy-background-component/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/wuyxp/vue-lazy-background-component#readme",
   "devDependencies": {
     "@babel/core": "^7.4.0",
