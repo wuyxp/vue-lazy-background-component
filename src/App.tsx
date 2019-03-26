@@ -10,7 +10,13 @@ class Home extends Vue {
         <h1>
           {this.name}
         </h1>
-        <LazyBackground>
+        <LazyBackground
+          style={{
+            width: '480px',
+            height: '300px'
+          }}
+          src={require('./assets/bg.jpg')}
+        >
           这里使用了LazyBackground组件
         </LazyBackground>
       </div>

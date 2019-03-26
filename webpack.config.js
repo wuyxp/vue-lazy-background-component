@@ -2,6 +2,8 @@ const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const cleanWebpackPlugin = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const autoprefixer = require('autoprefixer');
+const webpackPluginImageTransformWebpAndMini = require('webpack-plugin-image-transform-webp-and-mini')
 
 module.exports = {
   mode: "development",
@@ -31,6 +33,14 @@ module.exports = {
               localIdentName: '[local]_[hash:base64:8]'
             }
           },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => autoprefixer({
+                browsers: ['last 3 versions', '> 1%']
+              })
+            }
+          },
           'less-loader'
         ]
       },
@@ -50,11 +60,19 @@ module.exports = {
             }
           }
         ]
-      }, {
+      }, 
+      {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         enforce: 'pre',
         loader: 'tslint-loader'
+      },
+      {
+        test: /\.(jpe?g|png|gif)/,
+        loader: "file-loader",
+        options: {
+          name: '[name]-[hash:8].[ext]'
+        }
       }
     ]
   },
@@ -70,6 +88,13 @@ module.exports = {
     new cleanWebpackPlugin(),
     new htmlWebpackPlugin({
       template: './index.html'
+    }),
+    new webpackPluginImageTransformWebpAndMini({
+      name: '[name]-[hash:8].[ext]',
+      paths: {
+        dir: path.resolve(__dirname, './src/assets'),
+        include: ['bg']
+      }
     })
   ]
 }

@@ -10,6 +10,10 @@ class LazyBackground extends Vue {
   })
   public src;
 
+  public maskStyle = {
+    backgroundImage: `url(${this.src})`
+  }
+
 
   public maskShow: boolean = true
   public mounted() {
@@ -19,12 +23,10 @@ class LazyBackground extends Vue {
     return (
       <div class={style.container}>
         { this.$slots.default }
-        <transition name='___fade'>
-          <div
-            class={style.containerMask}
-            style='maskStyle'
-          ></div>
-        </transition>
+        <div
+          class={style.containerMask}
+          style={this.maskStyle}
+        ></div>
       </div>
     )
   }
