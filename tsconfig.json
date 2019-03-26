@@ -6,7 +6,7 @@
   "compilerOptions": {
     "outDir": "./dist",
     "strict":true,
-    "module": "esnext",
+    "module": "es2015",
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "moduleResolution": "node",

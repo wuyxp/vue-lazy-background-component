@@ -4,6 +4,7 @@ import style from './style.less'
 
 @Component
 class LazyBackground extends Vue {
+  public static install
   @Prop({
     type: String,
     required: true
