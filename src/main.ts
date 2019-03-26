@@ -6,7 +6,7 @@ const components = [
 
 const install = (Vue, opts = {}) => {
   components.map(component => {
-    Vue.component(component.name, component);
+    Vue.component(component.componentName, component);
   })
 }
 

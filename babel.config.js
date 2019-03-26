@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ['@vue/app'],
+  // presets: ['@vue/app'],
   'plugins': [
     '@babel/transform-strict-mode',
     '@babel/plugin-syntax-dynamic-import',

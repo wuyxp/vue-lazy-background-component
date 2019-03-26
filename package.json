@@ -4,8 +4,8 @@
   "description": "提供一个可以对背景图片延迟加载，并且动态选择加载更合适（webp）格式的图片。",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --open --hot --config='./build/webpack.dev.config.js'",
-    "build": "NODE_ENV=production webpack --progress --hide-modules --config='./build/webpack.prod.config.js'",
+    "dev": "webpack-dev-server --open --hot --config='./build/webpack.dev.config.js'",
+    "build": "webpack --progress --config='./build/webpack.prod.config.js' --profile --json > stats.json",
     "fix": "tslint --fix --project ./tsconfig.json"
   },
   "repository": {

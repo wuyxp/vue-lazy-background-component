@@ -9,15 +9,14 @@ const config = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
-    library: 'vueLazyBackgroundCompontent',
+    library: 'LazyBackground',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
   externals: [
     {
       vue: 'Vue'
-    },
-    // 'vue-class-component'
+    }
   ],
   plugins: [
     new cleanWebpackPlugin()

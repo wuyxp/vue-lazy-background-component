@@ -5,6 +5,8 @@ import style from './style.less'
 @Component
 class LazyBackground extends Vue {
   public static install
+  public static componentName: string = 'LazyBackground'
+  public name: string = 'LazyBackground'
   @Prop({
     type: String,
     required: true
