@@ -15,7 +15,7 @@ const config = {
   },
   externals: [
     {
-      vue: 'Vue'
+      vue: 'vue'
     }
   ],
   plugins: [
