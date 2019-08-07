@@ -13,6 +13,10 @@
 ```
 npm install vue-lazy-background-component --save
 
+或者
+
+syarn add @belllabs/vue-lazy-background-component --save
+
 ...main.js
 
 import LazyBackground from 'vue-lazy-background-component'

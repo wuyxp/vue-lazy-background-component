@@ -1,5 +1,5 @@
 {
-  "name": "vue-lazy-background-component",
+  "name": "@belllabs/vue-lazy-background-component",
   "version": "1.0.3",
   "description": "提供一个可以对背景图片延迟加载，并且动态选择加载更合适（webp）格式的图片。",
   "main": "dist/bundle.js",
